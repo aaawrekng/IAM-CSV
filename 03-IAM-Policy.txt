@@ -1,0 +1,91 @@
+resource "aws_iam_group_policy" "batcave_policy" {
+  name  = "IAMReadOnlyAccess"
+  group = aws_iam_group.zDev.name
+
+    policy = jsonencode ({
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:GenerateCredentialReport",
+                "iam:GenerateServiceLastAccessedDetails",
+                "iam:Get*",
+                "iam:List*",
+                "iam:SimulateCustomPolicy",
+                "iam:SimulatePrincipalPolicy"
+            ],
+            "Resource": "*",
+        },
+    ]
+ })
+}
+
+resource "aws_iam_group_policy" "mancave_policy" {
+  name  = "IAMReadOnlyAccess"
+  group = aws_iam_group.mancave.name
+
+    policy = jsonencode ({
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:GenerateCredentialReport",
+                "iam:GenerateServiceLastAccessedDetails",
+                "iam:Get*",
+                "iam:List*",
+                "iam:SimulateCustomPolicy",
+                "iam:SimulatePrincipalPolicy"
+            ],
+            "Resource": "*",
+        },
+    ]
+ })
+}
+
+resource "aws_iam_group_policy" "spiderweb_policy" {
+  name  = "IAMReadOnlyAccess"
+  group = aws_iam_group.spiderweb.name
+
+    policy = jsonencode ({
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:GenerateCredentialReport",
+                "iam:GenerateServiceLastAccessedDetails",
+                "iam:Get*",
+                "iam:List*",
+                "iam:SimulateCustomPolicy",
+                "iam:SimulatePrincipalPolicy"
+            ],
+            "Resource": "*",
+        },
+    ]
+ })
+}
+
+resource "aws_iam_group_policy" "anthill_policy" {
+  name  = "IAMReadOnlyAccess"
+  group = aws_iam_group.anthill.name
+
+    policy = jsonencode ({
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:GenerateCredentialReport",
+                "iam:GenerateServiceLastAccessedDetails",
+                "iam:Get*",
+                "iam:List*",
+                "iam:SimulateCustomPolicy",
+                "iam:SimulatePrincipalPolicy"
+            ],
+            "Resource": "*",
+        },
+    ]
+ })
+}
